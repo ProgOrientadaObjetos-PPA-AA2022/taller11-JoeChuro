@@ -38,15 +38,15 @@ public abstract class Menu {
     return vInicialPlato;
     }
     
-    public double obtenerValorPlato(double m){
+    public double obtenerValorPlato(){
     return vPlato;
     }
     
     @Override
     public String toString(){
-    String cadena = String.format("Nombre del Plato: %s/n"
-            + "Valor inicial del Plato: %.2f"
-            + "Valor Plato: %.2f", nPlato, vInicialPlato, vPlato);
+    String cadena = String.format("Nombre del Plato: %s\n"
+            + "Valor inicial del Plato: %.2f\n",
+            nPlato, vInicialPlato);
     return cadena;
     }
 }

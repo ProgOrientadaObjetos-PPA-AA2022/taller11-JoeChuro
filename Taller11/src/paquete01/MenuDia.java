@@ -8,6 +8,44 @@ package paquete01;
  *
  * @author SALA I
  */
-public class MenuDia {
+public class MenuDia extends Menu{
+    private double vPostre;
+    private double vBebida;
     
+    public MenuDia(String nombrePlato, double vInicialPlato, double vP, double vB){
+    super(nombrePlato, vInicialPlato);
+    vPostre = vP;
+    vBebida = vB;
+    }
+    
+    public void establecerValorPostre(double vp){
+    vPostre = vp;
+    }
+    
+    public void establecerValorBebida(double vb){
+    vBebida = vb;
+    }
+    
+
+
+    @Override
+    public void establecerValorPlato() {
+        vPlato = vInicialPlato + vPostre + vBebida;
+    }
+    public double obtenerValorPorcionGuarnicion(){
+    return vPostre;
+    }
+    
+    public double obtenerValorBebida(){
+    return vBebida;
+    }
+    
+    @Override
+    public String toString(){
+    String cadena = String.format("%s\n", super.toString());
+    cadena = String.format("%sValor Postre: %.2f\n"
+            + "Valor bebida: %.2f\n",
+            cadena, vPostre, vBebida);
+    return cadena;
+    }
 }

@@ -5,6 +5,8 @@
  */
 package paquete01;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author reroes
@@ -16,6 +18,12 @@ public class Ejecutor01 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        ArrayList<Menu> menus = new ArrayList<>();
+        
+        MenuNinios mn = new MenuNinios("Ninio 01", 2.00, 1.00, 1.50);
+        menus.add(mn);
+        
+        System.out.println(mn);
     }
     
     
