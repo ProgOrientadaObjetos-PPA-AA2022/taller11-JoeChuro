@@ -41,7 +41,7 @@ public class Ejecutor01 {
         menuSolicitado.add(mc1);
 
         // System.out.println(mc1);
-        Cuenta c = new Cuenta("Juan Perez", 10, menuSolicitado);
+        Cuenta c = new Cuenta("Rene Elizalde", 10, menuSolicitado);
         for (int i = 0; i < menuSolicitado.size(); i++) {
             c.establecerSubtotal();
             c.establecerValorPagar();
