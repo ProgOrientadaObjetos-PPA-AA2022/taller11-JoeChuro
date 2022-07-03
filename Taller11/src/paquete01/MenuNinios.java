@@ -40,10 +40,12 @@ private double vPHelado;
     
     @Override
     public String toString(){
-    String cadena = String.format("%s\n", super.toString());
-    cadena = String.format("%sValor porcion Helado: %.2f\n"
-            + "Valor porcion Pastel: %.2f\n",
-            cadena, vPHelado, vPPastel);
+    String cadena = String.format("Menu Ninios:\n%s", super.toString());
+    cadena = String.format("%s"
+            + "\tValor porcion Helado: %.2f\n"
+            + "\tValor porcion Pastel: %.2f\n"
+            + "\tValor Plato: %.2f\n",
+            cadena, vPHelado, vPPastel, obtenerValorPlato());
     return cadena;
     }    
 }

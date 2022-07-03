@@ -18,28 +18,51 @@ public class Ejecutor01 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        ArrayList<Menu> menus = new ArrayList<>();
-        
-        MenuNinios mn = new MenuNinios("Ninio 01", 2.00, 1.00, 1.50);
-        menus.add(mn);
-        
-        System.out.println(mn);
+        ArrayList<Menu> menuSolicitado = new ArrayList<>();
+
+        MenuNinios mn1 = new MenuNinios("Ninio 01", 2.00, 1.00, 1.50);
+        mn1.establecerValorPlato();
+        menuSolicitado.add(mn1);
+
+        MenuNinios mn2 = new MenuNinios("Ninio 02", 3.00, 1.00, 1.50);
+        mn2.establecerValorPlato();
+        menuSolicitado.add(mn2);
+
+        MenuEconomico me1 = new MenuEconomico("Econo 001", 4, 25.00);
+        me1.establecerValorPlato();
+        menuSolicitado.add(me1);
+
+        MenuDia md1 = new MenuDia("Dia 001", 5, 1, 1);
+        md1.establecerValorPlato();
+        menuSolicitado.add(md1);
+
+        MenuCarta mc1 = new MenuCarta("Carta 001", 6, 1.5, 2, 10);
+        mc1.establecerValorPlato();
+        menuSolicitado.add(mc1);
+
+        // System.out.println(mc1);
+        Cuenta c = new Cuenta("Juan Perez", 10, menuSolicitado);
+        for (int i = 0; i < menuSolicitado.size(); i++) {
+            c.establecerSubtotal();
+            c.establecerValorPagar();
+        }
+
+        System.out.println(c);
     }
-    
-    
+
 }
 // lo que debe presentar
 /*
 Factura
 Cliente: René Elizalde
-Menu del Día:
+Menu del Niño:
 	Plato: Niños 01
 	Valor Inicial: 2,00
 	Valor helado: 1,00
 	Valor pastel: 1,50
 	Valor del Menú: 4,50
 
-Menu del Día:
+Menu del Niño:
 	Plato: Niños 02
 	Valor Inicial: 3,00
 	Valor helado: 1,00

@@ -8,31 +8,35 @@ package paquete01;
  *
  * @author SALA I
  */
-public class MenuEconomico extends Menu{
-    private double pAdicional;
-    
-    public MenuEconomico(String nombrePlato, double vInicialPlato, double p){
-    super(nombrePlato, vInicialPlato);
-    pAdicional = p;
+public class MenuEconomico extends Menu {
+
+    private double pDescuento;
+
+    public MenuEconomico(String nombrePlato, double vInicialPlato, double p) {
+        super(nombrePlato, vInicialPlato);
+        pDescuento = p;
     }
-    
-    public void establecerPorcentaje(double p){
-    pAdicional = vInicialPlato*(p/100);
+
+    public void establecerPorcentaje(double p) {
+        pDescuento = p;
     }
 
     @Override
     public void establecerValorPlato() {
-        vPlato = vPlato + pAdicional;
+        vPlato = vInicialPlato - (pDescuento * vInicialPlato) / 100;
     }
-    
-    public double obtenerPorcentaje(){
-    return pAdicional;
+
+    public double obtenerPorcentaje() {
+        return pDescuento;
     }
+
     @Override
-    public String toString(){
-    String cadena = String.format("%s\n", super.toString());
-cadena = String.format("%s\nPorcentaje Adicional: %.2f\n",
-            cadena,pAdicional);
-    return cadena;
+    public String toString() {
+        String cadena = String.format("Menu Economico:\n%s", super.toString());
+        cadena = String.format("%s"
+                + "\tPorcentaje Adicional: %.2f\n"
+                + "\tValor del Plato: %.2f\n",
+                cadena, pDescuento, obtenerValorPlato());
+        return cadena;
     }
 }
